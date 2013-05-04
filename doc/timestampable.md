@@ -81,7 +81,6 @@ cache is activated
 <?php
 namespace Entity;
 
-use DateTime;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -99,7 +98,7 @@ class Article
     private $title;
 
     /**
-     * @var datetime $created
+     * @var \DateTime $created
      *
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
@@ -107,7 +106,7 @@ class Article
     private $created;
 
     /**
-     * @var datetime $updated
+     * @var \DateTime $updated
      *
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
@@ -346,7 +345,7 @@ class Article
     private $title;
 
     /**
-     * @var datetime $created
+     * @var \DateTime $created
      *
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
@@ -354,7 +353,7 @@ class Article
     private $created;
 
     /**
-     * @var datetime $updated
+     * @var \DateTime $updated
      *
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime")
@@ -367,7 +366,7 @@ class Article
     private $type;
 
     /**
-     * @var datetime $published
+     * @var \DateTime $published
      *
      * @ORM\Column(type="datetime", nullable=true)
      * @Gedmo\Timestampable(on="change", field="type.title", value="Published")
@@ -544,7 +543,7 @@ And our Entity properties look as expected:
 ``` php
 <?php
 /**
- * @var datetime $dateCreated
+ * @var \DateTime $dateCreated
  *
  * @ORM\Column(name="date_created", type="datetime")
  * @Gedmo\Timestampable(on="create")
@@ -552,7 +551,7 @@ And our Entity properties look as expected:
 private $dateCreated;
 
 /**
- * @var datetime $dateLastModified
+ * @var \DateTime $dateLastModified
  *
  * @Gedmo\Timestampable(on="update")
  * @ORM\Column(name="date_last_modified", type="datetime")
